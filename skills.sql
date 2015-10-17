@@ -219,7 +219,7 @@ CREATE TABLE Awards(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name VARCHAR(50) NOT NULL,
     year INT(4) NOT NULL,
-    winner VARCHAR(50)
+    winner_id int(4)
 );
 
 
@@ -230,11 +230,11 @@ CREATE TABLE Awards(
 --   IIHS Safety Award    2015      the id for the 2015 Chevrolet Malibu
 --   IIHS Safety Award    2015      the id for the 2015 Subaru Outback
 
-INSERT INTO Awards (name, year, winner)
+INSERT INTO Awards (name, year, winner_id)
 VALUES ('IIHS Safety Award', '2015', (SELECT id FROM Models WHERE year = 2015 AND name = 'Malibu'));
 
 
-INSERT INTO Awards (name, year, winner)
+INSERT INTO Awards (name, year, winner_id)
 VALUES ('IIHS Safety Award', '2015', (SELECT id FROM Models WHERE year = 2015 AND name = 'Outback'));
 
 
